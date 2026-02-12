@@ -1,0 +1,129 @@
+/* General body */
+body {
+  background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating hearts animation */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-30px) rotate(20deg); opacity: 1; }
+  100% { transform: translateY(-60px) rotate(-20deg); opacity: 0; }
+}
+
+.heart {
+  position: fixed;
+  font-size: 24px;
+  animation: float 4s infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Container */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* Headers */
+h1, h2 {
+  color: #ff4d88;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/* Paragraphs */
+p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button, .buttons a button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  background: linear-gradient(45deg, #ff4d88, #ff85b3);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,77,136,0.4);
+}
+
+/* Hidden content */
+.hidden { display: none; }
+
+/* NO button shrink and move */
+#noBtn.shrink {
+  transform: scale(0.6) translate(var(--x), var(--y));
+  transition: transform 0.3s;
+}
+
+/* Crying emojis */
+.cry {
+  position: fixed;
+  top: 0;
+  animation: fall 4s linear forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(600px); opacity: 0; }
+}
+
+/* Gift images */
+.gift-img {
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+/* Textarea for wishlist */
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+/* Audio/iframe styling */
+iframe, audio {
+  margin: 15px 0;
+  border-radius: 15px;
+}
+
+/* Responsive text */
+@media (max-width: 500px) {
+  h1, h2 { font-size: 1.5rem; }
+  button { font-size: 14px; padding: 10px 20px; }
+}
